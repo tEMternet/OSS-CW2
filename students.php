@@ -22,8 +22,10 @@
       $data['content'] .= "<tr><th>Code</th><th>First Name</th><th>Level</th></tr>";
       // Display the modules within the html table
       while($row = mysqli_fetch_array($result)) {
-         $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[firstname] </td>";
-         $data['content'] .= "<td> $row[level] </td></tr>";
+         $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[dob] </td>";
+         $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
+         $data['content'] .= "<td> $row[house] </td><td> $row[town] </td>";
+         $data['content'] .= "<td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td></tr>";
       }
       $data['content'] .= "</table>";
 
