@@ -19,7 +19,7 @@
       // prepare page content
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='9' align='center'>Students</th></tr>";
-      $data['content'] .= "<tr><th>Student ID</th><th>D.O.B</th><th>First Name</th><th></th>";
+      $data['content'] .= "<tr><th>Student ID</th><th>D.O.B</th><th>First Name</th>";
       $data['content'] .= "<th>Last Name</th><th>Home Address</th><th>Town</th>";
       $data['content'] .= "<th>County</th><th>Country</th><th>Post Code</th></tr>";
 
