@@ -31,7 +31,7 @@
          $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
          $data['content'] .= "<td> $row[house] </td><td> $row[town] </td>";
          $data['content'] .= "<td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td>";
-         $data['content'] .= "<td><input type='checkbox' name='$id[]' value='$row[studentid]'/></td></tr>";
+         $data['content'] .= "<td><input type='checkbox' name='$row[studentid]' value='$row[studentid]'/></td></tr>";
       }
       $data['content'] .= "</table>";
 
