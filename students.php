@@ -18,7 +18,7 @@
       $result = mysqli_query($conn,$sql);
 
       // prepare page content
-      $data['content'] .= "<form action='/delete.php' method='post'>";
+      $data['content'] .= "<form action='delete.php' method='post'>";
       $data['content'] .= "<table border='1'>";
       $data['content'] .= "<tr><th colspan='10' align='center'>Students</th></tr>";
       $data['content'] .= "<tr><th>Student ID</th><th>D.O.B</th><th>First Name</th>";
