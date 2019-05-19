@@ -37,7 +37,7 @@
          count++;
       }
       $data['content'] .= "</table>";
-      $data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
+      //$data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
 
       //$data['content'] .= "<form action=''/delete.php' method='post'>";
       $data['content'] .= "<input type='submit' name='btndel' value='DELETE'/>";
