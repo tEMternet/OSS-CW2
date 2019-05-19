@@ -12,9 +12,9 @@
       echo template("templates/partials/nav.php");
 
       // Build SQL statment that selects a student's modules
-      for(i=0;i=sizeof($_POST['id']);i++){
+      for(i=0;i=sizeof($_POST['$stuID']);i++){
         $sql = "DELETE FROM student";
-        $sql .= "WHERE studentid = '$_POST['id']'";
+        $sql .= "WHERE studentid = '$_POST[\'$stuID\']'";
         $result = mysqli_query($conn,$sql);
       }
       // prepare page content
