@@ -11,15 +11,20 @@
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
 
+      //echo $_POST['stuID'];
+      if(isset($_POST['btndel'])){
       // Build SQL statment that selects a student's modules
-      for(i=0;i=sizeof($_POST['$stuID']);i++){
-        $sql = "DELETE FROM student";
-        $sql .= "WHERE studentid = '$_POST[\'$stuID\']'";
-        $result = mysqli_query($conn,$sql);
+        foreach ($_POST['stuID'] as $id){
+          $sql = "Delete FROM student ";
+          $sql .= "WHERE studentid = $id";
+          $result = mysqli_query($conn,$sql);
+        }
       }
       // prepare page content
 
       $data['content'] .= "<p>'Selected items deleted'</p>";
+
+      mysqli_close($conn);
 
       // render the template
       echo template("templates/default.php", $data);
