@@ -40,7 +40,11 @@
       //$data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
 
       //$data['content'] .= "<form action=''/delete.php' method='post'>";
-      $data['content'] .= "<input type='submit' name='btndel' id='delete' value='Delete Student Records'/>";
+      $data['content'] .= "<input type='submit' name='btndel' id='delete' value='Delete'/>";
+      $data['content'] .= "</form>";
+
+      $data['content'] .= "<form action='addstudents.php' method='post'>";
+      $data['content'] .= "<input type='submit' name='btnnew' id='new' value='New Student'/>";
       $data['content'] .= "</form>";
 
       mysqli_close($conn);

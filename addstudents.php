@@ -11,40 +11,33 @@
 
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
-
       //count = 0;
+      $data['content'] = <<<EOD
 
-      // Build SQL statment that selects a student's modules
-      $sql = "select * from student;";
+      <h2>Add New Student</h2>
+      <form name="frmdetails" action="addconfirm.php" method="post">
+      Student Identification Number :
+      <input name="txtstudentid" type="text"  value="" /><br/>
+      First Name :
+      <input name="txtfirstname" type="text"  value="" /><br/>
+      Surname :
+      <input name="txtlastname" type="text"  value="" /><br/>
+      D.O.B :
+      <input name="txtdob" type="text" value="" /><br/>
+      Number and Street :
+      <input name="txthouse" type="text" value="" /><br/>
+      Town :
+      <input name="txttown" type="text" value="" /><br/>
+      County :
+      <input name="txtcounty" type="text" value="" /><br/>
+      Country :
+      <input name="txtcountry" type="text" value="" /><br/>
+      Postcode :
+      <input name="txtpostcode" type="text" value="" /><br/>
+      <input type="submit" value="Save" name="submit"/>
+      </form>
 
-      $result = mysqli_query($conn,$sql);
-
-      // prepare page content
-      $data['content'] .= "<form action='delete.php' method='post'>";
-      $data['content'] .= "<table border='1'>";
-      $data['content'] .= "<tr><th colspan='10' align='center'>Students</th></tr>";
-      $data['content'] .= "<tr><th>Student ID</th><th>D.O.B</th><th>First Name</th>";
-      $data['content'] .= "<th>Last Name</th><th>Home Address</th><th>Town</th>";
-      $data['content'] .= "<th>County</th><th>Country</th><th>Post Code</th><th>Select</th></tr>";
-
-      // Display the modules within the html table
-      while($row = mysqli_fetch_array($result)) {
-         $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[dob] </td>";
-         $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
-         $data['content'] .= "<td> $row[house] </td><td> $row[town] </td>";
-         $data['content'] .= "<td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td>";
-         $data['content'] .= "<td><input type='checkbox' name='stuID[]' value='$row[studentid]'/></td></tr>";
-         //count++;
-      }
-      $data['content'] .= "</table>";
-      //$data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
-
-      //$data['content'] .= "<form action=''/delete.php' method='post'>";
-      $data['content'] .= "<input type='submit' name='btndel' id='delete' value='Delete Student Records'/>";
-      $data['content'] .= "</form>";
-
-      mysqli_close($conn);
-
+EOD;
       // render the template
       echo template("templates/default.php", $data);
 
