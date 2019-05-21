@@ -26,6 +26,11 @@
 
       mysqli_close($conn);
 
+      //<a href="details.php">My Details</a>
+      $data['content'] .= "<form action='students.php' method='post'>";
+      $data['content'] .= "<input type='submit' name='btnback' value='Back'/>";
+      $data['content'] .= "</form>";
+
       // render the template
       echo template("templates/default.php", $data);
 
