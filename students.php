@@ -12,7 +12,7 @@
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
 
-      count = 0;
+      //count = 0;
 
       // Build SQL statment that selects a student's modules
       $sql = "select * from student;";
@@ -33,15 +33,21 @@
          $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
          $data['content'] .= "<td> $row[house] </td><td> $row[town] </td>";
          $data['content'] .= "<td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td>";
-         $data['content'] .= "<td><input type='checkbox' name='$stuID[]' value='$row[studentid]'/></td></tr>";
-         count++;
+         $data['content'] .= "<td><input type='checkbox' name='stuID[]' value='$row[studentid]'/></td></tr>";
+         //count++;
       }
       $data['content'] .= "</table>";
-      $data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
+      //$data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
 
       //$data['content'] .= "<form action=''/delete.php' method='post'>";
-      $data['content'] .= "<input type='submit' name='btndel' value='DELETE'/>";
+      $data['content'] .= "<input type='submit' name='btndel' id='delete' value='Delete'/>";
       $data['content'] .= "</form>";
+
+      $data['content'] .= "<form action='addstudents.php' method='post'>";
+      $data['content'] .= "<input type='submit' name='btnnew' id='new' value='New Student'/>";
+      $data['content'] .= "</form>";
+
+      mysqli_close($conn);
 
       // render the template
       echo template("templates/default.php", $data);

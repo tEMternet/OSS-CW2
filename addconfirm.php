@@ -10,19 +10,23 @@
 
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
-
+//'studentid', 'password',
       //echo $_POST['stuID'];
-      if(isset($_POST['btndel'])){
-      // Build SQL statment that selects a student's modules
-        foreach ($_POST['stuID'] as $id){
-          $sql = "Delete FROM student ";
-          $sql .= "WHERE studentid = $id";
+      if(isset($_POST['submit'])){
+      // Build SQL statment that selects a student's module
+          //$increment =
+
+          $sql = "insert INTO student ";
+          $sql .= "(studentid, dob, firstname, lastname, house, town, county, country, postcode) VALUES ";          //$sql .= "'',";
+          $sql .= "('$_POST[txtstudentid]', '$_POST[txtdob]', '$_POST[txtfirstname]', '$_POST[txtlastname]', ";
+          $sql .= "'$_POST[txthouse]', '$_POST[txttown]', '$_POST[txtcounty]', '$_POST[txtcountry]', '$_POST[txtpostcode]');";
+
+          //$sql .= "'$newStu[8]',";
           $result = mysqli_query($conn,$sql);
-        }
       }
       // prepare page content
 
-      $data['content'] .= "<p>'Selected items deleted'</p>";
+      $data['content'] .= "<p>'Added New Student'</p>";
 
       mysqli_close($conn);
 
