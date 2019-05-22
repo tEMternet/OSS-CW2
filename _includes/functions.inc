@@ -11,6 +11,11 @@ include "passwordLib.php";
  */
 function validatelogin($id,$password) {
    global $conn;
+
+   // SQL Injection Protection
+   $id = mysqli_real_escape_string($conn, $_POST['txtid']);
+   $password = mysqli_real_escape_string($conn, $_POST['txtpwd']);
+
    // Build an SQL statment that will return a record with a matching id
    $sql = "select * from student where studentid='$id';";
    //echo $sql;

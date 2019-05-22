@@ -11,9 +11,9 @@
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
 
-      //echo $_POST['stuID'];
+      //check if the delete button contains a value
       if(isset($_POST['btndel'])){
-      // Build SQL statment that selects a student's modules
+      // Delete student records parsed from the student entity
         foreach ($_POST['stuID'] as $id){
           $sql = "Delete FROM student ";
           $sql .= "WHERE studentid = $id";
@@ -26,7 +26,7 @@
 
       mysqli_close($conn);
 
-      //<a href="details.php">My Details</a>
+      // link back to students.php
       $data['content'] .= "<form action='students.php' method='post'>";
       $data['content'] .= "<input type='submit' name='btnback' value='Back'/>";
       $data['content'] .= "</form>";

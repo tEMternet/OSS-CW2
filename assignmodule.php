@@ -23,7 +23,7 @@ if (isset($_SESSION['id'])) {
 
      $data['content'] = <<<EOD
      <div class="jumbotron vertical-center" style="margin-bottom:0">
-     <h1 style="text-align: center">Choose Your Modual</h1>
+     <h1 style="text-align: center">Choose Your Module</h1>
      <form name='frmassignmodule' action='' method='post' >
      <div class="row" style="center">
       <div class="col-sm-4" style=""></div>

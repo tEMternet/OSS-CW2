@@ -10,18 +10,16 @@
 
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
-//'studentid', 'password',
-      //echo $_POST['stuID'];
-      if(isset($_POST['submit'])){
-      // Build SQL statment that selects a student's module
-          //$increment =
 
+      //check if the submit button contains a value
+      if(isset($_POST['submit'])){
+
+      // Build SQL statment that adds the new student and their corresponding details
           $sql = "insert INTO student ";
-          $sql .= "(studentid, dob, firstname, lastname, house, town, county, country, postcode) VALUES ";          //$sql .= "'',";
+          $sql .= "(studentid, dob, firstname, lastname, house, town, county, country, postcode) VALUES ";
           $sql .= "('$_POST[txtstudentid]', '$_POST[txtdob]', '$_POST[txtfirstname]', '$_POST[txtlastname]', ";
           $sql .= "'$_POST[txthouse]', '$_POST[txttown]', '$_POST[txtcounty]', '$_POST[txtcountry]', '$_POST[txtpostcode]');";
 
-          //$sql .= "'$newStu[8]',";
           $result = mysqli_query($conn,$sql);
       }
       // prepare page content
@@ -30,7 +28,7 @@
 
       mysqli_close($conn);
 
-      //<a href="details.php">My Details</a>
+      // Link back to students.php
       $data['content'] .= "<form action='students.php' method='post'>";
       $data['content'] .= "<input type='submit' name='btnback' value='Back'/>";
       $data['content'] .= "</form>";

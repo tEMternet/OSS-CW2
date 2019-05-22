@@ -12,9 +12,8 @@
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
 
-      //count = 0;
 
-      // Build SQL statment that selects a student's modules
+      // Build SQL statment that selects all students and their details (except password)
       $sql = "select * from student;";
 
       $result = mysqli_query($conn,$sql);
@@ -27,22 +26,21 @@
       $data['content'] .= "<th>Last Name</th><th>Home Address</th><th>Town</th>";
       $data['content'] .= "<th>County</th><th>Country</th><th>Post Code</th><th>Select</th></tr>";
 
-      // Display the modules within the html table
+      // Display the students and details within the html table
       while($row = mysqli_fetch_array($result)) {
          $data['content'] .= "<tr><td> $row[studentid] </td><td> $row[dob] </td>";
          $data['content'] .= "<td> $row[firstname] </td><td> $row[lastname] </td>";
          $data['content'] .= "<td> $row[house] </td><td> $row[town] </td>";
          $data['content'] .= "<td> $row[county] </td><td> $row[country] </td><td> $row[postcode] </td>";
          $data['content'] .= "<td><input type='checkbox' name='stuID[]' value='$row[studentid]'/></td></tr>";
-         //count++;
       }
       $data['content'] .= "</table>";
-      //$data['content'] .= "<input type='hidden' name='btndel' value='DELETE'/>";
 
-      //$data['content'] .= "<form action=''/delete.php' method='post'>";
+      //Form uses check boxes to determin which students to delete upon pressing Delete
       $data['content'] .= "<input type='submit' name='btndel' id='delete' value='Delete'/>";
       $data['content'] .= "</form>";
 
+      //Add New Student takes us to new page with form for adding details
       $data['content'] .= "<form action='addstudents.php' method='post'>";
       $data['content'] .= "<input type='submit' name='btnnew' id='new' value='New Student'/>";
       $data['content'] .= "</form>";

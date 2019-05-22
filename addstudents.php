@@ -8,7 +8,8 @@
 
       echo template("templates/partials/header.php");
       echo template("templates/partials/nav.php");
-      //count = 0;
+
+      // layout and form
       $data['content'] = <<<EOD
 
       <div class="jumbotron vertical-center" style="margin-bottom:0; test-align: HRTime\PerformanceCounter">
