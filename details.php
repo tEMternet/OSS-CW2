@@ -40,23 +40,50 @@ if (isset($_SESSION['id'])) {
       // also http://stackoverflow.com/questions/8280360/formatting-an-array-value-inside-a-heredoc
       $data['content'] = <<<EOD
 
-   <h2>My Details</h2>
+   <div class="jumbotron vertical-center" style="margin-bottom:0">
+   <h2 style="text-align: center">My Details</h2>
    <form name="frmdetails" action="" method="post">
-   First Name :
-   <input name="txtfirstname" type="text" value="{$row['firstname']}" /><br/>
-   Surname :
-   <input name="txtlastname" type="text"  value="{$row['lastname']}" /><br/>
-   Number and Street :
-   <input name="txthouse" type="text"  value="{$row['house']}" /><br/>
-   Town :
-   <input name="txttown" type="text"  value="{$row['town']}" /><br/>
-   County :
-   <input name="txtcounty" type="text"  value="{$row['county']}" /><br/>
-   Country :
-   <input name="txtcountry" type="text"  value="{$row['country']}" /><br/>
-   Postcode :
-   <input name="txtpostcode" type="text"  value="{$row['postcode']}" /><br/>
-   <input type="submit" value="Save" name="submit"/>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">First Name :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txtfirstname" type="text" value="{$row['firstname']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">Surname :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txtlastname" type="text"  value="{$row['lastname']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">.Number and Street :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txthouse" type="text"  value="{$row['house']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">Town :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txttown" type="text"  value="{$row['town']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">County :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txtcounty" type="text"  value="{$row['county']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">Country :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txtcountry" type="text"  value="{$row['country']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;">Postcode :</div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input name="txtpostcode" type="text"  value="{$row['postcode']}" /></div>
+   </div>
+   <div class="row">
+     <div class="col-sm-4" style=""></div>
+     <div class="col-sm-2" style="background-color:lavender;"></div>
+     <div class="col-sm-2" style="background-color:lavenderblush;"><input type="submit" value="Save" name="submit"/></div>
+   </div>
+   </div>
    </form>
 
 EOD;
